@@ -1,9 +1,9 @@
 import sys
 import time
 from pathlib import Path
-from getFramesFromGIF import getFramesFromGIF
-from getMCFunction import getMCFunction
-from clearOutDir import clearOutDir
+from src.getFramesFromGIF import getFramesFromGIF
+from src.getMCFunction import getMCFunction
+from src.clearOutDir import clearOutDir
 
 if len(sys.argv) < 3:
     print('Missing argument. Correct usage: make [gifPath] [uniqueID]')

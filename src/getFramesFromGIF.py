@@ -29,3 +29,23 @@ def getFramesFromGIF(filename):
         filesize = Path(filename).stat().st_size
         print(str(len(frames)) + ' frames loaded. [' + str(filesize/1000) + 'kB]')
         return frames
+
+
+def getFramesFromGIFObject(file_object):
+    i = 0
+    frames = []
+    try:
+        while 1:
+
+            background = Image.new("RGB", im.size, (255, 255, 255))
+            background.paste(im)
+            frames.append(background)
+
+            i += 1
+            im.seek(im.tell() + 1)
+
+
+    except EOFError:
+        filesize = file_object.tell()
+        print(str(len(frames)) + ' frames loaded. [' + str(filesize/1000) + 'kB]')
+        return frames
